@@ -54,17 +54,35 @@
         </div>
       </el-form-item>
     </el-form>
+
+
     <!--  底部  -->
+
     <div class="el-login-footer">
       <span>Copyright © 2021-2022 huashaenyin.link All Rights Reserved.</span>
     </div>
+
+      <!-- 背景音乐 -->
+          <audio src="../assets/audio/asoul.mp3"
+                 loop='true'
+                 autoplay="autoplay"
+    			 ref="MusicPlay"
+    			hidden
+      ></audio>
+
   </div>
+
+
+
 </template>
+
+
 
 <script>
 import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from '@/utils/jsencrypt'
+
 
 export default {
   name: "Login",
@@ -150,9 +168,24 @@ export default {
           });
         }
       });
+    },
+
+},
+  cyinpin(){
+
+              this.yinpin=!this.yinpin
+              if(this.yinpin===true){
+               this.$parent.$refs.MusicPlay.play();
+              }else{
+              this.$parent.$refs.MusicPlay.pause();
+              }
+              	this.msg="稍等！"
+              	this.alertShows=true
+              	setTimeout(()=>{this.alertShows=false},500)
+
     }
-  }
 };
+
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
