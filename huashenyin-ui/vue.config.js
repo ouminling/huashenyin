@@ -32,13 +32,18 @@ module.exports = {
     host: '0.0.0.0',
     port: port,
     open: true,
+    //http://localhost/dev-api/captchalmage 前端Vue获取图片是后端
+    //反向代理，url请求前端，进行代理入映射到后端，解决跨越问题
     proxy: {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
         target: `http://localhost:8080`,
         changeOrigin: true,
+        //pathRewrite:路径重写
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
+          ///dev-api 替换成'' 再映射到 http://localhost:8080
+
         }
       }
     },
