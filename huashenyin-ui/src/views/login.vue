@@ -42,7 +42,7 @@
         <el-button
           :loading="loading"
           size="medium"
-          type="primary"
+          type="primary" round
           style="width:100%;"
           @click.native.prevent="handleLogin"
         >
@@ -62,13 +62,13 @@
       <span>Copyright © 2021-2022 huashaenyin.link All Rights Reserved.</span>
     </div>
 
-      <!-- 背景音乐 -->
-          <audio src="../assets/audio/asoul.mp3"
-                 loop='true'
-                 autoplay="autoplay"
-    			 ref="MusicPlay"
-    			hidden
-      ></audio>
+    <!-- 背景音乐 -->
+    <audio src="../assets/audio/asoul.mp3"
+           loop='true'
+           autoplay="autoplay"
+           ref="MusicPlay"
+           hidden
+    ></audio>
 
   </div>
 
@@ -90,8 +90,8 @@ export default {
     return {
       codeUrl: "",
       loginForm: {
-        username: "admin",
-        password: "admin123",
+        username: "",
+        password: "",
         rememberMe: false,
         code: "",
         uuid: ""
@@ -169,28 +169,27 @@ export default {
         }
       });
     },
-
-},
-  cyinpin(){
-
-              this.yinpin=!this.yinpin
-              if(this.yinpin===true){
-               this.$parent.$refs.MusicPlay.play();
-              }else{
-              this.$parent.$refs.MusicPlay.pause();
-              }
-              	this.msg="稍等！"
-              	this.alertShows=true
-              	setTimeout(()=>{this.alertShows=false},500)
+    cyinpin(){
+      this.yinpin=!this.yinpin
+      if(this.yinpin==true){
+        this.$parent.$refs.MusicPlay.play();
+      }else{
+        this.$parent.$refs.MusicPlay.pause();
+      }
+      this.msg="稍等！"
+      this.alertShows=true
+      setTimeout(()=>{this.alertShows=false},500)
 
     }
+  }
+
 };
 
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
 .login {
-  display: flex;
+  DISPLAY: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -200,12 +199,12 @@ export default {
 .title {
   margin: 0px auto 30px auto;
   text-align: center;
-  color: #707070;
+  color: #476B9B;
 }
 
 .login-form {
   border-radius: 6px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, .3);
   width: 400px;
   padding: 25px 25px 5px 25px;
   .el-input {
@@ -215,9 +214,10 @@ export default {
     }
   }
   .input-icon {
-    height: 39px;
-    width: 14px;
+    height: 41px;
+    width: 16px;
     margin-left: 2px;
+
   }
 }
 .login-tip {
