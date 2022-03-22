@@ -12,15 +12,17 @@ import com.huashenyin.common.core.domain.AjaxResult;
 import com.huashenyin.common.core.domain.entity.SysMenu;
 import com.huashenyin.common.core.domain.entity.SysUser;
 import com.huashenyin.common.core.domain.model.LoginBody;
-import com.huashenyin.common.utils.SecurityUtils;
+import com.huashenyin.common.core.domain.model.LoginUser;
+import com.huashenyin.common.utils.ServletUtils;
 import com.huashenyin.framework.web.service.SysLoginService;
 import com.huashenyin.framework.web.service.SysPermissionService;
+import com.huashenyin.framework.web.service.TokenService;
 import com.huashenyin.system.service.ISysMenuService;
 
 /**
  * 登录验证
- * 
- * @author ruoyi
+ *
+ * @author huashenyin
  */
 @RestController
 public class SysLoginController
@@ -34,9 +36,12 @@ public class SysLoginController
     @Autowired
     private SysPermissionService permissionService;
 
+    @Autowired
+    private TokenService tokenService;
+
     /**
      * 登录方法
-     * 
+     *
      * @param loginBody 登录信息
      * @return 结果
      */
@@ -45,21 +50,21 @@ public class SysLoginController
     {
         AjaxResult ajax = AjaxResult.success();
         // 生成令牌
-        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
-                loginBody.getUuid());
+        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode());
         ajax.put(Constants.TOKEN, token);
         return ajax;
     }
 
     /**
      * 获取用户信息
-     * 
+     *
      * @return 用户信息
      */
     @GetMapping("getInfo")
     public AjaxResult getInfo()
     {
-        SysUser user = SecurityUtils.getLoginUser().getUser();
+        LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
+        SysUser user = loginUser.getUser();
         // 角色集合
         Set<String> roles = permissionService.getRolePermission(user);
         // 权限集合
@@ -73,14 +78,16 @@ public class SysLoginController
 
     /**
      * 获取路由信息
-     * 
+     *
      * @return 路由信息
      */
     @GetMapping("getRouters")
     public AjaxResult getRouters()
     {
-        Long userId = SecurityUtils.getUserId();
-        List<SysMenu> menus = menuService.selectMenuTreeByUserId(userId);
+        LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
+        // 用户信息
+        SysUser user = loginUser.getUser();
+        List<SysMenu> menus = menuService.selectMenuTreeByUserId(user.getUserId());
         return AjaxResult.success(menuService.buildMenus(menus));
     }
 }
