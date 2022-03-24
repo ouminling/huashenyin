@@ -31,11 +31,19 @@
         :imgSize="{ width: '330px', height: '155px' }"
         ref="verify"
       ></Verify>
-      <el-checkbox v-model="loginForm.rememberMe" style="margin:0 0 25px 0;">记住密码</el-checkbox>
 
-      <div style="float: right;" v-if="register">
+
+
+
+
+      <el-checkbox v-model="loginForm.rememberMe" style="margin:0 0 25px 0;" >记住密码</el-checkbox>
+
+
+      <div  style="float: right;" v-if="register">
         <router-link class="link-type" :to="'/register'" ><h5>立即注册</h5></router-link>
       </div>
+
+
 
       <el-form-item style="width: 100%">
         <el-button
