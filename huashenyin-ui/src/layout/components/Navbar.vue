@@ -25,10 +25,9 @@
 
       </template>
 
-      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+      <el-dropdown class="avatar-container right-menu-item hover-effect" >
         <div class="avatar-wrapper">
-          <img :src="avatar" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
+          <el-avatar shape="circle"  :src="avatar" class="user-avatar"></el-avatar>
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/user/profile">
@@ -115,7 +114,7 @@ export default {
   height: 50px;
   overflow: hidden;
   position: relative;
-  background: rgba(255, 255, 255, .3);
+  background: rgba(114, 116, 137, 0.49);
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
   .hamburger-container {
@@ -127,7 +126,7 @@ export default {
     -webkit-tap-highlight-color:transparent;
 
     &:hover {
-      background: rgba(0, 0, 0, .025)
+      background: rgba(240, 245, 255,)
     }
   }
 
@@ -159,7 +158,7 @@ export default {
       padding: 0 8px;
       height: 100%;
       font-size: 18px;
-      color: #5a5e66;
+      color: #F4F6FE;
       vertical-align: text-bottom;
 
       &.hover-effect {
@@ -173,11 +172,12 @@ export default {
     }
 
     .avatar-container {
-      margin-right: 30px;
+      //margin-right: 30px;
 
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;
+
 
         .user-avatar {
           cursor: pointer;

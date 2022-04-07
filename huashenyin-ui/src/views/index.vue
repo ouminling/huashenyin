@@ -84,7 +84,7 @@ export default {
   padding: 32px;
   //
   background-color: rgba(255, 255, 255, .3);
-  background-image: url("../assets/images/data.jpg");
+  //background-image: url("../assets/images/data.jpg");
   background-size:100% 100%;
   background-attachment: fixed;
   position: relative;

@@ -63,7 +63,7 @@
         <el-form-item>
           <span slot="label">
             上级菜单
-            <el-tooltip content="分配到指定菜单下，例如 系统管理" placement="top">
+            <el-tooltip content="分配到指定菜单下，例如 F系统管理" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
