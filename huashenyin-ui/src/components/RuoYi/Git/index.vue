@@ -1,12 +1,12 @@
 <template>
   <div>
-    <svg-icon icon-class="github" @click="goto" />
+    <svg-icon icon-class="gitee" @click="goto" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'RuoYiGit',
+  name: 'huashenyinGit',
   data() {
     return {
       url: 'https://gitee.com/huashenyin/RuoYi-Vue'

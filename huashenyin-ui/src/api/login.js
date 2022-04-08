@@ -18,6 +18,18 @@ export function login(username, password, code, uuid) {
   })
 }
 
+// erweima方法
+export function QRcode(data) {
+  return request({
+    url: '/QRcode',
+    headers: {
+      isToken: false
+    },
+    method: 'post',
+    data: data
+  })
+}
+
 // 注册方法
 export function register(data) {
   return request({

@@ -35,4 +35,5 @@ public class SysRegisterController extends BaseController
         String msg = registerService.register(user);
         return StringUtils.isEmpty(msg) ? success() : error(msg);
     }
+
 }

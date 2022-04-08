@@ -52,6 +52,11 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/QRcode',
+    component: () => import('@/views/QRcode'),
+    hidden: true
+  },
+  {
     path: '/404',
     component: () => import('@/views/error/404'),
     hidden: true

@@ -67,6 +67,16 @@
             <groupId>com.huashenyin</groupId>
             <artifactId>huashenyin-system</artifactId>
         </dependency>
+        <!--钉钉登录接入-->
+<!--        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.6</version>
+        </dependency>-->
 
     </dependencies>
 
