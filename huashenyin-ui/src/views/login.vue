@@ -35,13 +35,13 @@
 
 
 
-
+      <div >
       <el-checkbox v-model="loginForm.rememberMe" style="margin:0 0 25px 0;" >记住密码</el-checkbox>
+        <el-link :underline="false" type="primary" style="float: right;line-height: 20px">忘记密码</el-link>
 
 
-      <div  style="float: right;" v-if="register">
-        <router-link class="link-type" :to="'/register'" ><h5>立即注册</h5></router-link>
       </div>
+
 
 
 
@@ -56,6 +56,17 @@
           <span v-if="!loading">登 录</span>
           <span v-else>登 录 中...</span>
         </el-button>
+
+
+        <div  style="float: left;line-height: 30px" v-if="register">
+          <h5><router-link class="link-type" :to="'/register'" >立即注册</router-link></h5>
+        </div>
+
+        <div  style="float: right;line-height: 30px" >
+
+          <h5><router-link class="link-type" :to="'/QRcode'" >二维码登录</router-link></h5>
+        </div>
+
 
 
       </el-form-item>
@@ -149,10 +160,10 @@ export default {
         Cookies.remove("rememberMe");
       }
       this.$store.dispatch("Login", this.loginForm).then(() => {
-          this.$router.push({ path: this.redirect || "/" }).catch(() => {});
-        }).catch(() => {
-          this.loading = false;
-        });
+        this.$router.push({ path: this.redirect || "/" }).catch(() => {});
+      }).catch(() => {
+        this.loading = false;
+      });
     },
     handleLogin() {
       this.$refs.loginForm.validate((valid) => {
@@ -230,4 +241,5 @@ export default {
 .login-code-img {
   height: 38px;
 }
+
 </style>
