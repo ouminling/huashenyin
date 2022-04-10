@@ -4,11 +4,10 @@
       <h3 class="title">花神引后台管理系统</h3>
       <el-form-item>
         <div class="text" >使用QQ/支付宝/钉钉扫码快速登录</div>
+
         <div class="QRcode">
         <img  src="../assets/images/QRcode.png">
         </div>
-
-
 
         <div class="text">登录视为您已同意
           <el-link :underline="false" style="font-size:12px" type="primary" href="https://cdn.jsdelivr.net/gh/ouminling/CDN/花神引网站服务条款（www.huashenyin.cn）.pdf" target="_blank" class="protocol">
@@ -20,10 +19,18 @@
           <div  style=" margin-top: 0px;">其他登录方式</div>
 
           <div class="icons-list">
-            <el-link :underline="false" href="https://oapi.dingtalk.com/connect/qrconnect?appid=ding78rmwx8qckrjjemm&response_type=code&scope=snsapi_login&state=STATE&redirect_uri=https://ding-doc.dingtalk.com/"><svg-icon class="dingtalk anticon" icon-class="dingtalk" /></el-link>
-            <el-link :underline="false" href="https://www.cnblogs.com/huashenyin/"><svg-icon class="WeChat anticon" icon-class="WeChat" /></el-link>
-            <el-link :underline="false" href="https://www.cnblogs.com/huashenyin/"><svg-icon class="Alipay anticon" icon-class="Alipay" /></el-link>
-            <el-link :underline="false" href="https://www.cnblogs.com/huashenyin/"><svg-icon class="Sina anticon" icon-class="Sina" /></el-link>
+            <el-tooltip class="item" effect="dark" content="钉钉扫码登录" placement="bottom">
+              <el-link :underline="false" href="/Dingtalk"><svg-icon class="dingtalk anticon" icon-class="dingtalk" /></el-link>
+            </el-tooltip>
+            <el-tooltip class="item" effect="dark" content="暂未实现" placement="bottom">
+              <el-link :underline="false" href=""><svg-icon class="WeChat anticon" icon-class="WeChat" /></el-link>
+            </el-tooltip>
+            <el-tooltip class="item" effect="dark" content="暂未实现" placement="bottom">
+              <el-link :underline="false" href=""><svg-icon class="Alipay anticon" icon-class="Alipay" /></el-link>
+            </el-tooltip>
+            <el-tooltip class="item" effect="dark" content="暂未实现" placement="bottom">
+              <el-link :underline="false" href=""><svg-icon class="Sina anticon" icon-class="Sina" /></el-link>
+            </el-tooltip>
 
           </div>
         </div>
@@ -37,9 +44,13 @@
       <span>Copyright © 2018-2022 huasheyin.link All Rights Reserved.</span>
     </div>
   </div>
+
 </template>
 
+
+
 <script>
+
 import { getCodeImg, register } from "@/api/login";
 
 export default {
@@ -84,6 +95,7 @@ export default {
     this.getCode();
   },
   methods: {
+
     getCode() {
       getCodeImg().then(res => {
         this.captchaOnOff = res.captchaOnOff === undefined ? true : res.captchaOnOff;

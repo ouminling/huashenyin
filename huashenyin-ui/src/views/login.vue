@@ -52,6 +52,7 @@
           type="primary" round
           style="width:100%;"
           @click.native.prevent="handleLogin"
+          @click="login_welcome"
         >
           <span v-if="!loading">登 录</span>
           <span v-else>登 录 中...</span>
@@ -67,17 +68,6 @@
           <h5><router-link class="link-type" :to="'/QRcode'" >二维码登录</router-link></h5>
         </div>
 
-<!--        <div>
-          <div  style=" margin-top: -10px;">其它登录方式</div>
-
-          <div class="icons-list">
-            <svg-icon class="dingtalk anticon" icon-class="dingtalk" />
-            <svg-icon class="WeChat anticon" icon-class="WeChat" />
-            <svg-icon class="Alipay anticon" icon-class="Alipay" />
-            <svg-icon class="Sina anticon" icon-class="Sina" />
-            &lt;!&ndash; <a-button type="link" @click="applyLicense">授权申请</a-button> &ndash;&gt;
-          </div>
-        </div>-->
 
       </el-form-item>
     </el-form>
@@ -109,6 +99,7 @@
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from "@/utils/jsencrypt";
 import Verify from "@/components/Verifition/Verify";
+import { timeFix } from '@/utils/util'
 
 export default {
   components: { Verify },
@@ -182,7 +173,23 @@ export default {
         }
       });
     },
+    login_welcome() {
+
+      this.$router.push({ path: '/' })
+
+      setTimeout(() => {
+        // 延迟 8 秒显示欢迎信息
+        this.$notify.success({
+          iconClass:'el-icon-s-opportunity',
+          title: '欢迎',
+          message: `${timeFix()}，欢迎回来`
+
+        })
+      },8000)
+
+    },
   },
+
 };
 
 </script>

@@ -57,6 +57,11 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/Dingtalk',
+    component: () => import('@/views/Dingtalk'),
+    hidden: true
+  },
+  {
     path: '/404',
     component: () => import('@/views/error/404'),
     hidden: true
