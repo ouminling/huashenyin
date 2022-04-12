@@ -9,7 +9,7 @@ import { isRelogin } from '@/utils/request'
 NProgress.configure({ showSpinner: false })
 
 /*白名单，添加后可不必登录访问*/
-const whiteList = ['/login', '/auth-redirect', '/bind', '/register','/QRcode','/Dingtalk']
+const whiteList = ['/login', '/auth-redirect', '/bind', '/register','/QRcode','/Dingtalk','/index_v2']
 
 router.beforeEach((to, from, next) => {
   NProgress.start()
