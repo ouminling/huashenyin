@@ -1,8 +1,8 @@
 {
-  "name": "ruoyi",
+  "name": "huashenyin",
   "version": "3.8.0",
-  "description": "若依管理系统",
-  "author": "若依",
+  "description": "花神引管理系统",
+  "author": "花神引",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -72,6 +72,7 @@
     "connect": "3.6.6",
     "eslint": "7.15.0",
     "eslint-plugin-vue": "7.2.0",
+    "less-loader": "^7.3.0",
     "lint-staged": "10.5.3",
     "runjs": "4.4.2",
     "sass": "1.32.13",

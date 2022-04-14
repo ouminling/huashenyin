@@ -67,6 +67,11 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/mi',
+    component: () => import('@/mi/views/mi'),
+    hidden: true
+  },
+  {
     path: '/404',
     component: () => import('@/views/error/404'),
     hidden: true
@@ -79,6 +84,22 @@ export const constantRoutes = [
   {
     path: '',
     component: Layout,
+    redirect: '/mi',
+    children: [{
+      path: 'index',
+      component: (resolve) => require(['@/mi/views/mi'], resolve),
+      name: 'Index',
+      meta: {
+        title: '首页',
+        icon: 'dashboard',
+        affix: true
+      }
+    }]
+  },
+
+/*  {
+    path: '',
+    component: Layout,
     redirect: 'index',
     children: [
       {
@@ -88,7 +109,7 @@ export const constantRoutes = [
         meta: { title: '工作台', icon: 'home', affix: true }
       }
     ]
-  },
+  },*/
   {
     path: '/user',
     component: Layout,
