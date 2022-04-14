@@ -47,6 +47,7 @@
 
       <el-form-item style="width: 100%">
         <el-button
+          class="button_v1"
           :loading="loading"
           size="medium"
           type="primary" round
@@ -54,7 +55,7 @@
           @click.native.prevent="handleLogin"
           @click="login_welcome"
         >
-          <span v-if="!loading">登 录</span>
+          <span v-if="!loading" >登 录</span>
           <span v-else>登 录 中...</span>
         </el-button>
 
@@ -195,6 +196,8 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
+
+@import url(../layout/components/css/Streamer_button.css);
 
 .login {
   display: flex;
