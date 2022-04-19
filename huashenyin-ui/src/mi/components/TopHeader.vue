@@ -27,9 +27,9 @@
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</label>
         <transition name="list-trans">
-          <ul class="search-hots" v-show="hotsListFlag">
+          <dl class="search-hots" v-show="hotsListFlag">
             <li class="hots-item" v-for="(item, index) in hots" :key="index">{{item}}</li>
-          </ul>
+          </dl>
         </transition>
         <ul class="search-list" v-show="!hotsListFlag">
           <li class="list-item" v-for="(item, index) in searchHot" :key="index">{{item}}</li>
@@ -191,6 +191,7 @@ export default {
         }
 
       .header-navs-container {
+
         width: 820px;
         display: flex;
         height: 100%;
@@ -200,9 +201,13 @@ export default {
         }
 
         .navs {
+          list-style-type:none;
           display: flex;
           line-height: 100px;
+          align-items: center;
           .navs-item > a {
+
+            list-style-type: none;
             cursor: pointer;
             padding: 26px 10px 38px;
             &:hover {
@@ -213,10 +218,12 @@ export default {
       }
 
       .header-search-container {
+
         height: 50px;
         position: relative;
         display: flex;
         .search-input {
+
           width: 240px;
           height: 100%;
           outline: none;
@@ -228,6 +235,7 @@ export default {
           border: 1px solid #e0e0e0;
           cursor: pointer;
           i {
+            list-style-type: none;
             font-size: 19px;
             width: 48px;
             background: #fff;
@@ -253,12 +261,14 @@ export default {
         }
 
         .search-hots {
+
           position: absolute;
           display: flex;
           top: 14px;
           right: 55px;
           z-index: 2;
           .hots-item {
+            list-style-type:none;
             width: auto;
             height: 18px;
             line-height: 18px;
@@ -276,6 +286,7 @@ export default {
         }
 
         .search-list {
+          list-style-type:none;
           position: absolute;
           width: 240px;
           top: 50px;
@@ -310,6 +321,7 @@ export default {
       overflow: hidden;
       z-index: 15;
       .menus {
+        list-style-type: none;
         padding: 30px 0 30px 110px;
         min-width: 1500px;
         display: flex;

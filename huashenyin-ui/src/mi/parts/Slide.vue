@@ -78,9 +78,10 @@ export default {
 
 <style lang="less">
   .sale-slide {
+
     width: 978px;
     height: 340px;
-    margin-left: 14px;
+    margin-left: 10px;
     overflow: hidden;
     position: relative;
     display: flex;

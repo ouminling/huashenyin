@@ -118,14 +118,14 @@ export default {
     height: 266px;
     left: 50%;
     right: auto;
-    margin-left: 613px;
+    margin-left: 613px;//默认613px
     bottom: 40px;
     z-index: 99;
     a {
       display: block;
       position: relative;
-      width: 27px;
-      height: 42px;
+      width: 50px;
+      height: 50px;
       background-color: #fff;
       border: 1px solid #f5f5f5;
       text-align: center;
@@ -137,10 +137,11 @@ export default {
   }
 
   .tool-icon {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     padding-top: 10px;
-    margin: 0 auto 8px;
+    margin: 0 0 8px;
+
     img {
       width: 20px;
       height: 20px;

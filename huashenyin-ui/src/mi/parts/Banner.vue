@@ -3,14 +3,14 @@
     <div class="banner-prev" @click="prev"></div>
     <div class="banner-next" @click="next"></div>
     <transition-group tag="ul" name="banner-trans" class="banner-container">
-      <li class="image-container"
+      <dl class="image-container"
       v-for="(item, index) in banners"
       v-show="index === imgIndex"
       :key="index">
         <a :href="item.url" target="_blank">
           <img :src="item.src" />
         </a>
-      </li>
+      </dl>
     </transition-group>
     <div class="banner-points">
       <a class="banner-point" @click="jump(index)" :class="{'active': index === imgIndex}" v-for="(item, index) in banners.length" :key="index"></a>
@@ -63,6 +63,8 @@ export default {
 <style lang="less">
   .banner {
     position: relative;
+    right: 39px;
+    width: 1276px;
     .banner-prev {
       position: absolute;
       top: 50%;
@@ -136,12 +138,15 @@ export default {
       height: 460px;
       overflow: hidden;
       .image-container {
+        margin-top: 0;
         width: 100%;
-        height: auto;
+        height: 100%;
         a {
           display: block;
+
           img {
             width: 100%;
+
           }
         }
       }

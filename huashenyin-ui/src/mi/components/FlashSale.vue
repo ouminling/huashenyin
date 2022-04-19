@@ -140,8 +140,9 @@ export default {
     display: flex;
     .sale-count-down {
       display: inline-block;
-      width: 234px;
-      height: 340px;
+      margin-top:16px;
+      width: 250px;
+      height: 326px;
       padding-top: 39px;
       border-top: 1px solid #e53935;
       background: #f1eded;
@@ -194,7 +195,9 @@ export default {
   .slide-control {
     display: flex;
     border: 1px solid #e0e0e0;
+
     .slide-button {
+
       padding: 0 4px;
       font-size: 20px;
       font-weight: 800;

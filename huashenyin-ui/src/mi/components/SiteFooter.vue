@@ -104,6 +104,7 @@ export default {
     height: auto;
     margin: 0 auto;
     .site-service {
+      list-style:none;
       display: flex;
       padding: 27px 0;
       border-bottom: 1px solid #e0e0e0;
@@ -111,10 +112,11 @@ export default {
 
     .site-link {
       display: flex;
-      justify-content: space-between;
+      justify-content: left;
       padding: 40px 0;
       .links {
         display: flex;
+
       }
     }
   }
@@ -164,7 +166,8 @@ export default {
     }
 
     .link-list, .link-item {
-      margin: 10px 0 0;
+      list-style:none;
+      margin: 10px -20px 0;
       font-size: 12px;
       a {
         color: #757575;

@@ -23,7 +23,7 @@ import GoodsBox from '../parts/GoodsBox'
 export default {
   data () {
     return {
-      postItem1: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1a2f39c9fe0804ace1d3707574c7c86f.jpg?w=2452&h=240', url: 'https://www.mi.com/redminote7pro/'},
+      postItem1: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e2b43800d3e1ef40470ac04b3e0140b.jpg?thumb=1&w=1533&h=150&f=webp&q=90', url: 'https://www.mi.com/redmik40s'},
       postItem2: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e64bcac4e4b7c2ceb94f277bbc57ad45.jpg?w=2452&h=240', url: 'https://www.mi.com/a/h/9819.html'},
       postItem3: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7606bb66991f59e15b5b35e917b1a907.jpg?w=2452&h=240', url: 'https://www.mi.com/a/h/11544.html'},
       postItem4: {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e2cf7dd837eb8d4690070d7dfa817d9.jpg?w=2452&h=240', url: 'https://item.mi.com/10476.html'},

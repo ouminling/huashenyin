@@ -16,9 +16,9 @@
     @mouseleave="bannerMenuHide()"
     @mouseenter="bannerMenuShow()">
         <ul class="menu-info-list"
-        v-for="(list, key_1) in menuListMatch"
-        :key="key_1"
-        :data-key="key_1">
+        v-for="(list, key) in menuListMatch"
+        :key="key"
+        :data-key="key">
           <li class="info-list-item"
           v-for="(item, index) in list"
           :key="index"
@@ -56,11 +56,11 @@ export default {
         {value: '生活 箱包', url: 'https://www.mi.com/p/9293.html', type: 'life'}
       ],
       banners: [
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cefed8336bae62768afeeb6a3b8f55c8.jpg?w=2452&h=920', url: 'https://www.mi.com/redminote7/'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/743e04f29f920648b9d99b04a85ce343.jpg?w=2452&h=920', url: 'https://www.mi.com/a/h/11251.html'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3d7d3f2df881cf62e5fafdada94f5018.jpg?w=2452&h=920', url: 'https://www.mi.com/mitvall-screen/e55c/'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6bd4174b8c5aad67a64864a5716ad152.jpg?w=2452&h=920', url: 'https://www.mi.com/washer-dryer-10/'},
-        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a1f0eb196c6c65a89ffba6efa4b5679c.jpg?w=2452&h=920', url: 'https://www.mi.com/a/h/11117.html'}
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8620324582df4fb2376138363d76812a.jpg?w=2452&h=920', url: 'https://www.mi.com/xiaomicivi/'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b717c9c84e44409496e993ed6b526c05.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/mi12pro'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b3a1561bd0986cd71ca726d3add6a13d.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/mitvall-screen/e55c/'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a7a0fbd73e4f0f45ec66802d050f12b0.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/buy/detail?product_id=15872'},
+        {src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b158441e01e7acd9ad27a49bbac4c0fa.jpg?thumb=1&w=1533&h=575&f=webp&q=90', url: 'https://www.mi.com/redmik50g'}
       ],
       phone: [
         {name:'Redmi Note 8 Pro', src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e99f7f32923b2ef482338c08544000bb.png', url: 'http://www.mi.com/redminote8pro'},
@@ -292,10 +292,11 @@ export default {
     .menu-container {
       position: absolute;
       left: 0;
+
       top: 0;
       width: 235px;
-      height: auto;
-      background: rgba(0, 0, 0, 0.3);
+      height: 460px;
+      background: rgba(0, 0, 0, 0.7);
       z-index: 10;
     }
   }
@@ -306,11 +307,14 @@ export default {
     .list-item {
       display: flex;
       padding-left: 30px;
+
+
       &:hover {
         background-color: #ff6700;
       }
 
       a {
+        margin-top: -3px;
         position: relative;
         display: inline-block;
         width: 170px;
@@ -325,6 +329,7 @@ export default {
         font-size: 22px;
         color: #e0e0e0;
         line-height: 42px;
+
       }
     }
   }

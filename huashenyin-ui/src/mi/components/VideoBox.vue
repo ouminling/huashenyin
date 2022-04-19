@@ -56,6 +56,7 @@ export default {
     height: auto;
     margin: 0 auto;
     .box-content {
+      list-style:none;
       margin-bottom: 12px;
     }
   }
